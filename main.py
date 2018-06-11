@@ -100,7 +100,7 @@ async def on_message(message):
 			await client.send_message(message.channel, embed=avatarembed)
 			
 	if message.content.lower().startswith("k>invite"):
-		await client.send_message(message.channel, "{} -- https://discordapp.com/oauth2/authorize?client_id=454018497995997184&permissions=8&scope=bot".format(str("<@"+message.author.id+">")))
+		await client.send_message(message.channel, "https://discordapp.com/oauth2/authorize?client_id=454018497995997184&permissions=8&scope=bot {}".format(str("<@"+message.author.id+">")))
 		
 			
 			
