@@ -18,6 +18,7 @@ kcolor = 0x5e003e
 	#escolhido = discord.utils.get(client.get_all_members(), id=str(escolhido_random))
 	#fofoca_random = random.choice(fofocas)
 	#await client.send_message(message.channel, fofoca_random.format("<@"+str(message.author.id)+">",escolhido.name))
+	#a
 
 client = discord.Client()
 
