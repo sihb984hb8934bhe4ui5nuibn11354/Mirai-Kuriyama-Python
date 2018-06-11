@@ -122,7 +122,15 @@ async def on_message(message):
 		else:
 			await client.send_message(message.channel, "https://discordapp.com/oauth2/authorize?client_id=454018497995997184&permissions=8&scope=bot {}".format(str("<@"+message.author.id+">")))
 		
-			
+	if message.content.lower().startswith("k>teste"):
+
+
+		author = ctx.message.author
+		voice_channel = author.voice_channel
+		await client.join_voice_channel(voice_channel)
+
+		player = await vc.create_ytdl_player("https://www.youtube.com/watch?v=rPOUewuNKFE")
+		player.start()
 			
 		
 		
