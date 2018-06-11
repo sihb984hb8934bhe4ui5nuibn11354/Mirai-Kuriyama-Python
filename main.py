@@ -125,7 +125,7 @@ async def on_message(message):
 	if message.content.lower().startswith("k>teste"):
 
 
-		author = ctx.message.author
+		author = message.author
 		voice_channel = author.voice_channel
 		await client.join_voice_channel(voice_channel)
 
