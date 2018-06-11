@@ -2,6 +2,7 @@ import discord
 import asyncio
 import wikipedia
 import random
+import datetime
 
 kcolor = 0x5e003e
 
@@ -129,7 +130,9 @@ async def on_message(message):
 			await client.send_message(message.channel, "https://discordapp.com/oauth2/authorize?client_id=454018497995997184&permissions=8&scope=bot {}".format(str("<@"+message.author.id+">")))
 		
 	if message.content.lower().startswith("k>ping"):
-		await client.send_message(message.channel,'Meu ping atual: {0}'.format(round(client.latency, 1)))
+		now = datetime.datetime.utcnow()
+    		delta = now-ctx.message.timestamp
+		await client.send_message(message.channel,'Meu ping atual: {0}'.format(delta(microseconds=1)))
 		
 		
 		
