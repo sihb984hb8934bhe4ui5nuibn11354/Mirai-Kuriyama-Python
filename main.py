@@ -130,9 +130,7 @@ async def on_message(message):
 			await client.send_message(message.channel, "https://discordapp.com/oauth2/authorize?client_id=454018497995997184&permissions=8&scope=bot {}".format(str("<@"+message.author.id+">")))
 		
 	if message.content.lower().startswith("k>ping"):
-		now = datetime.datetime.utcnow()
-		delta = now.message.timestamp
-		await client.send_message(message.channel,'Meu ping atual: {0}'.format(delta(microseconds=1)))
+		await client.send_message(message.channel,'Meu ping atual: {0}'.format(str(client.ping))
 		
 		
 		
