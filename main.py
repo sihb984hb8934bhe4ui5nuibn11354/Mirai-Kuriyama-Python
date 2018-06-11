@@ -26,7 +26,7 @@ async def on_ready():
 	print("")
 	print("LIGADA COM SUCESSO!")
 	print("")
-	await client.change_presence(game=discord.Game(name='{} servidores | k>ajuda'.format(str(client.servers)), url='https://www.twitch.tv/deivizin_', type=1))
+	await client.change_presence(game=discord.Game(name='{} servidores'.format(str(client.servers)), url='https://www.twitch.tv/deivizin_', type=1))
 	
 @client.event
 async def on_message(message):
