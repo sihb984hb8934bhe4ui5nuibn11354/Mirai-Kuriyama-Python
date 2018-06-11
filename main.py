@@ -131,7 +131,7 @@ async def on_message(message):
 		
 	if message.content.lower().startswith("k>ping"):
 		now = datetime.datetime.utcnow()
-		delta = now-ctx.message.timestamp
+		delta = now.message.timestamp
 		await client.send_message(message.channel,'Meu ping atual: {0}'.format(delta(microseconds=1)))
 		
 		
