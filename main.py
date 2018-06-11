@@ -2,6 +2,7 @@ import discord
 import asyncio
 import wikipedia
 import random
+import youtube-dll
 
 kcolor = 0x5e003e
 
@@ -123,8 +124,17 @@ async def on_message(message):
 			await client.send_message(message.channel, "https://discordapp.com/oauth2/authorize?client_id=454018497995997184&permissions=8&scope=bot {}".format(str("<@"+message.author.id+">")))
 		
 	if message.content.lower().startswith("k>teste"):
-		player = await client.create_ytdl_player(url)
-		player.start()
+		url = 'https://www.youtube.com/watch?v=rPOUewuNKFE'
+
+		try:		
+			author = message.author
+			voice_channel = author.voice_channel
+			vc = await client.join_voice_channel(voice_channel)
+
+			player = await vc.create_ytdl_player(url)
+			player.start()
+		except:
+			pass
 			
 		
 		
