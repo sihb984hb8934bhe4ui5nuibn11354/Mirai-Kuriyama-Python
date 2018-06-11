@@ -26,7 +26,7 @@ async def on_ready():
 	print("")
 	print("LIGADA COM SUCESSO!")
 	print("")
-	await client.change_presence(game=discord.Game(name='k>ajuda', url='https://www.twitch.tv/deivizin_', type=1))
+	await client.change_presence(game=discord.Game(name='{} servidores | k>ajuda'.format(str(client.servers)), url='https://www.twitch.tv/deivizin_', type=1))
 	
 @client.event
 async def on_message(message):
@@ -79,7 +79,7 @@ async def on_message(message):
 			ajudaembedfff.set_author(name="Comandos diversos", icon_url="https://i.imgur.com/rdm3W9t.png")
 			ajudaembedf.add_field(name="k>avatar `(usuario)`", value="Use para capturar uma imagem de certo perfil", inline=False)
 			ajudaembedff.add_field(name="k>invite", value="Para poder me adicionar em seu servidor", inline=False)
-			ajudaembedff.add_field(name="k>botinfo", value="Para conhecer um pouco mais de mim", inline=False)
+			#ajudaembedff.add_field(name="k>botinfo", value="Para conhecer um pouco mais de mim", inline=False)
 			ajudaembedfff.add_field(name="k>wiki `(enciclopédia)`", value="Faz uma pesquisa na wikipedia", inline=False)
 			ajudaembedfff.add_field(name="k>fofoca", value="Fala de umas fofoquinhas que estão acontecendo `(Indisponível)`", inline=False)
 
@@ -122,19 +122,7 @@ async def on_message(message):
 		else:
 			await client.send_message(message.channel, "https://discordapp.com/oauth2/authorize?client_id=454018497995997184&permissions=8&scope=bot {}".format(str("<@"+message.author.id+">")))
 		
-	if message.content.lower().startswith("k>teste"):
-		url = 'https://www.youtube.com/watch?v=rPOUewuNKFE'
 
-		try:		
-			author = message.author
-			voice_channel = author.voice_channel
-			vc = await client.join_voice_channel(voice_channel)
-
-			player = await vc.create_ytdl_player(url)
-			player.start()
-		except:
-			pass
-			
 		
 		
 		
