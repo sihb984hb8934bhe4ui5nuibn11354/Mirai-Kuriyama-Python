@@ -12,3 +12,4 @@ six==1.11.0
 websockets==3.4
 youtube-dl==2018.2.26
 wikipedia==1.4.0
+opuslib==3.0.1
