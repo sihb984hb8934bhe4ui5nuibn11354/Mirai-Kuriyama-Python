@@ -78,11 +78,19 @@ async def on_message(message):
 			#argumentos_f = message.content[:9]
 			#argumentos = argumentos_f.split()[1]
 			#escolhido = discord.utils.get(client.get_all_members(), id=str(escolhido_random))
-			escolhido_a = discord.utils.get(client.get_all_members(), id=str(message.mentions[0].id))
-			avatarembed = discord.Embed(title="",color=0x5e003e,description="[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!")
-			avatarembed.set_author(name=message.author.name)
-			avatarembed.set_image(url=escolhido_a.avatar_url)
-			await client.send_message(message.channel, embed=avatarembed)
+			try:
+				escolhido_a = discord.utils.get(client.get_all_members(), id=str(message.mentions[0].id))
+				avatarembed = discord.Embed(title="",color=0x5e003e,description="[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!")
+				avatarembed.set_author(name=message.author.name)
+				avatarembed.set_image(url=escolhido_a.avatar_url)
+				await client.send_message(message.channel, embed=avatarembed)
+			except:
+				escolhido_a = discord.utils.get(client.get_all_members(), id=str(message.content[9:]))
+				avatarembed = discord.Embed(title="",color=0x5e003e,description="[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!")
+				avatarembed.set_author(name=message.author.name)
+				avatarembed.set_image(url=escolhido_a.avatar_url)
+				await client.send_message(message.channel, embed=avatarembed)
+				
 		except:
 			avatarembed = discord.Embed(title="",color=0x5e003e,description="[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!")
 			avatarembed.set_author(name=message.author.name)
