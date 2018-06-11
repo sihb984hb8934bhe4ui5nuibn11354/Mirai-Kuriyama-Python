@@ -124,9 +124,7 @@ async def on_message(message):
 		
 	if message.content.lower().startswith("k>teste"):
 
-
-		author = message.author
-		voice_channel = author.voice_channel
+		voice_channel = message.author.voice.voice_channel
 		await client.join_voice_channel(voice_channel)
 
 		player = await vc.create_ytdl_player("https://www.youtube.com/watch?v=rPOUewuNKFE")
