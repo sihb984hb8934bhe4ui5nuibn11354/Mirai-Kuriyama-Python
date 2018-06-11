@@ -30,7 +30,7 @@ async def on_ready():
 	
 @client.event
 async def on_message(message):
-	if message.content.lower().startswith("<@454018497995997184>"):
+	if message.content.lower().startswith("<@454018497995997184>") or "Direct Message" in str(message.channel):
 		if "Direct Message" in str(message.channel):
 			if "<@454018497995997184>" in message.content:
 				await client.send_message(message.channel, "{} -- Eu não gosto de ser mencionada no meu privado :rage: ".format(str("<@"+message.author.id+">")))
@@ -63,31 +63,31 @@ async def on_message(message):
 			except:
 				await client.send_message(message.channel, "{} -- Desculpe mais algo deu errado ou está pagina do wikipédia não existe :tired_face:".format("<@"+str(message.author.id)+">"))
 	
-		if message.content.startswith('k>ajuda'):
-			if "Direct Message" in str(message.channel):
-				await client.send_message(message.channel, "{} -- Você não pode usar comandos no meu privado :rage: ".format(str("<@"+message.author.id+">")))
-			else:
+	if message.content.startswith('k>ajuda'):
+		if "Direct Message" in str(message.channel):
+			await client.send_message(message.channel, "{} -- Você não pode usar comandos no meu privado :rage: ".format(str("<@"+message.author.id+">")))
+		else:
 		
-				await client.send_message(message.channel, "{} -- Enviei meus comandos no seu **privado** :inbox_tray:".format("<@" + str(message.author.id) + ">"))
+			await client.send_message(message.channel, "{} -- Enviei meus comandos no seu **privado** :inbox_tray:".format("<@" + str(message.author.id) + ">"))
 
-				ajudaembedf=discord.Embed(color=kcolor,icon_url="https://i.imgur.com/rdm3W9t.png")
-				ajudaembedff=discord.Embed(color=kcolor,icon_url="https://i.imgur.com/rdm3W9t.png")
-				ajudaembedfff=discord.Embed(color=kcolor,icon_url="https://i.imgur.com/rdm3W9t.png")
+			ajudaembedf=discord.Embed(color=kcolor,icon_url="https://i.imgur.com/rdm3W9t.png")
+			ajudaembedff=discord.Embed(color=kcolor,icon_url="https://i.imgur.com/rdm3W9t.png")
+			ajudaembedfff=discord.Embed(color=kcolor,icon_url="https://i.imgur.com/rdm3W9t.png")
 		
-				ajudaembedf.set_author(name="Comandos sobre o discord", icon_url="https://i.imgur.com/rdm3W9t.png")
-				ajudaembedff.set_author(name="Comandos sobre mim", icon_url="https://i.imgur.com/rdm3W9t.png")
-				ajudaembedfff.set_author(name="Comandos diversos", icon_url="https://i.imgur.com/rdm3W9t.png")
-				ajudaembedf.add_field(name="k>avatar `(usuario)`", value="Use para capturar uma imagem de certo perfil", inline=False)
-				ajudaembedff.add_field(name="k>invite", value="Para poder me adicionar em seu servidor", inline=False)
-				ajudaembedff.add_field(name="k>botinfo", value="Para conhecer um pouco mais de mim", inline=False)
-				ajudaembedfff.add_field(name="k>wiki `(enciclopédia)`", value="Faz uma pesquisa na wikipedia", inline=False)
-				ajudaembedfff.add_field(name="k>fofoca", value="Fala de umas fofoquinhas que estão acontecendo `(Indisponível)`", inline=False)
+			ajudaembedf.set_author(name="Comandos sobre o discord", icon_url="https://i.imgur.com/rdm3W9t.png")
+			ajudaembedff.set_author(name="Comandos sobre mim", icon_url="https://i.imgur.com/rdm3W9t.png")
+			ajudaembedfff.set_author(name="Comandos diversos", icon_url="https://i.imgur.com/rdm3W9t.png")
+			ajudaembedf.add_field(name="k>avatar `(usuario)`", value="Use para capturar uma imagem de certo perfil", inline=False)
+			ajudaembedff.add_field(name="k>invite", value="Para poder me adicionar em seu servidor", inline=False)
+			ajudaembedff.add_field(name="k>botinfo", value="Para conhecer um pouco mais de mim", inline=False)
+			ajudaembedfff.add_field(name="k>wiki `(enciclopédia)`", value="Faz uma pesquisa na wikipedia", inline=False)
+			ajudaembedfff.add_field(name="k>fofoca", value="Fala de umas fofoquinhas que estão acontecendo `(Indisponível)`", inline=False)
 
 				#ajudaembed.set_image(url="https://cdn.discordapp.com/attachments/454350443276140586/455106888506540032/Image__198761_1517969068.jpeg")
-				ajudaembedfff.set_footer(text="ATT: DEIVIZIN e CentenoBR")
-				await client.send_message(message.author, embed=ajudaembedf)	
-				await client.send_message(message.author, embed=ajudaembedff)
-				await client.send_message(message.author, embed=ajudaembedfff)
+			ajudaembedfff.set_footer(text="ATT: DEIVIZIN e CentenoBR")
+			await client.send_message(message.author, embed=ajudaembedf)	
+			await client.send_message(message.author, embed=ajudaembedff)
+			await client.send_message(message.author, embed=ajudaembedfff)
 		
 	if message.content.lower().startswith("k>avatar"):
 		if "Direct Message" in str(message.channel):
