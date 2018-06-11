@@ -20,17 +20,19 @@ kcolor = 0x5e003e
 
 client = discord.Client()
 
+
 @client.event
 async def on_ready():
 	wikipedia.set_lang("pt")
+	number = 0
 	
-	for legal in client.servers:
-		print(legal)
+	for number_f in client.servers:
+		number = number+1
 	
 	print("")
 	print("LIGADA COM SUCESSO!")
 	print("")
-	await client.change_presence(game=discord.Game(name='k!ajuda', url='https://www.twitch.tv/deivizin_', type=1))
+	await client.change_presence(game=discord.Game(name='{} servidores | k!ajuda'.format(str(number)), url='https://www.twitch.tv/deivizin_', type=1))
 	
 @client.event
 async def on_message(message):
