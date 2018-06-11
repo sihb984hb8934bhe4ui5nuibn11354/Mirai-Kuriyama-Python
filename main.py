@@ -21,6 +21,7 @@ client = discord.Client()
 @client.event
 async def on_ready():
 	wikipedia.set_lang("pt")
+	await client.change_presence(game=discord.Game(name='k!ajuda', url='https://www.twitch.tv/deivizin_', type=1))
 	print("")
 	print("LIGADA COM SUCESSO!")
 	print("")
@@ -29,8 +30,10 @@ async def on_ready():
 async def on_message(message):
 	if message.content.lower().startswith("<@454018497995997184>"):
 		await client.send_message(message.channel, "{} -- Meu prefixo atual desse servidor é `k!`".format("<@"+str(message.author.id)+">"))
+		
 	if message.content.lower().startswith("k!secret"):
 		await client.send_message(message.channel, "{} -- ErRoR 4o4".format("<@"+str(message.author.id)+">"))
+		
 	if message.content.lower().startswith("k!wiki"):
 		await client.send_message(message.channel, "{} -- Pesquisando na wikipedia, aguarde...".format("<@"+str(message.author.id)+">"))
 		try:
@@ -47,6 +50,7 @@ async def on_message(message):
 			await client.send_message(message.channel, embed=embed)
 		except:
 			await client.send_message(message.channel, "{} -- Desculpe mais algo deu errado ou está pagina do wikipédia não existe :tired_face:".format("<@"+str(message.author.id)+">"))
+			
 	if message.content.startswith('k!ajuda'):
 		await client.send_message(message.channel, "{} -- Enviei meus comandos no seu **privado** :inbox_tray:".format("<@" + str(message.author.id) + ">"))
 
@@ -69,6 +73,7 @@ async def on_message(message):
 		await client.send_message(message.author, embed=ajudaembedf)	
 		await client.send_message(message.author, embed=ajudaembedff)
 		await client.send_message(message.author, embed=ajudaembedfff)
+		
 	if message.content.lower().startswith("k!avatar"):
 		try:
 			#argumentos_f = message.content[:9]
@@ -84,6 +89,17 @@ async def on_message(message):
 			avatarembed.set_author(name=message.author.name)
 			avatarembed.set_image(url=message.author.avatar_url)
 			await client.send_message(message.channel, embed=avatarembed)
+			
+
+#@client.event
+#async def on_member_ban(user):
+    #channel = discord.utils.find(lambda c: c.name == 'punicoes', user.server.channels)
+   # embedban = discord.Embed(title='Banimento!', description='O membro **{0.name}** foi banido do servidor!\n'
+                                                             #'\nEspero que tenha aprendido a lição!'.format(user),
+                          #color=0x5e003e)
+   # embedban.set_image(url='https://media.giphy.com/media/upT3Tbwupcbok/giphy.gif')
+    #embedban.set_thumbnail(url=user.avatar_url)
+    #await client.send_message(channel, embed=embedban)
 		
 		
 		
