@@ -3,6 +3,8 @@ import asyncio
 import wikipedia
 import random
 
+kcolor = 0x5e003e
+
 #if message.content.lower().startswith("k!fofoca"):
 	#fofocas = ["{} -- Coitado(a) do(a) **__{}__** foi flagrado(a) na escola! :scream: ","{} -- Eu ouvir dizer que o(a) **__{}__** faltou a aula para fazer coisas com o(a) prim... :rolling_eyes:","{} -- Os relacionamentos estão indo bem para o(a) **__{}__** ( ͡° ͜ʖ ͡°) :laughing:","{} -- **__{}__** Fez um mijão numa festa e não tinha roupa reserva :confused:","{} -- **__{}__** Olhou-se no espelho e saiu correndo :laughing:"]
 	#lom = []
@@ -39,7 +41,7 @@ async def on_message(message):
 		try:
 			argumentos = message.content[7:]
 			sf = wikipedia.page(argumentos)
-			embed = discord.Embed(title="Pesquisa da Wikipedia",description="",color=0x5e003e)
+			embed = discord.Embed(title="Pesquisa da Wikipedia",description="",color=kcolor)
 			try:
 				embed.set_image(url=sf.images[0])
 			except:
@@ -54,15 +56,14 @@ async def on_message(message):
 	if message.content.startswith('k>ajuda'):
 		await client.send_message(message.channel, "{} -- Enviei meus comandos no seu **privado** :inbox_tray:".format("<@" + str(message.author.id) + ">"))
 
-		ajudaembedf=discord.Embed(color=0xea03f9,icon_url="https://i.imgur.com/rdm3W9t.png")
-		ajudaembedff=discord.Embed(color=0xea03f9,icon_url="https://i.imgur.com/rdm3W9t.png")
-		ajudaembedfff=discord.Embed(color=0xea03f9,icon_url="https://i.imgur.com/rdm3W9t.png")
+		ajudaembedf=discord.Embed(color=kcolor,icon_url="https://i.imgur.com/rdm3W9t.png")
+		ajudaembedff=discord.Embed(color=kcolor,icon_url="https://i.imgur.com/rdm3W9t.png")
+		ajudaembedfff=discord.Embed(color=kcolor,icon_url="https://i.imgur.com/rdm3W9t.png")
 		
 		ajudaembedf.set_author(name="Comandos sobre o discord", icon_url="https://i.imgur.com/rdm3W9t.png")
 		ajudaembedff.set_author(name="Comandos sobre mim", icon_url="https://i.imgur.com/rdm3W9t.png")
 		ajudaembedfff.set_author(name="Comandos diversos", icon_url="https://i.imgur.com/rdm3W9t.png")
 		ajudaembedf.add_field(name="k>avatar `(usuario)`", value="Use para capturar uma imagem de certo perfil", inline=False)
-		ajudaembedff.add_field(name="k>donate", value="Para ver as formas de me ajudar", inline=False)
 		ajudaembedff.add_field(name="k>invite", value="Para poder me adicionar em seu servidor", inline=False)
 		ajudaembedff.add_field(name="k>botinfo", value="Para conhecer um pouco mais de mim", inline=False)
 		ajudaembedfff.add_field(name="k>wiki `(enciclopédia)`", value="Faz uma pesquisa na wikipedia", inline=False)
@@ -73,6 +74,7 @@ async def on_message(message):
 		await client.send_message(message.author, embed=ajudaembedf)	
 		await client.send_message(message.author, embed=ajudaembedff)
 		await client.send_message(message.author, embed=ajudaembedfff)
+		
 	if message.content.lower().startswith("k>avatar"):
 		try:
 			#argumentos_f = message.content[:9]
@@ -80,22 +82,28 @@ async def on_message(message):
 			#escolhido = discord.utils.get(client.get_all_members(), id=str(escolhido_random))
 			try:
 				escolhido_a = discord.utils.get(client.get_all_members(), id=str(message.mentions[0].id))
-				avatarembed = discord.Embed(title="",color=0x5e003e,description="[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!")
+				avatarembed = discord.Embed(title="",color=kcolor,description="[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!")
 				avatarembed.set_author(name=message.author.name)
 				avatarembed.set_image(url=escolhido_a.avatar_url)
 				await client.send_message(message.channel, embed=avatarembed)
 			except:
 				escolhido_a = discord.utils.get(client.get_all_members(), id=str(message.content[9:]))
-				avatarembed = discord.Embed(title="",color=0x5e003e,description="[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!")
+				avatarembed = discord.Embed(title="",color=kcolor,description="[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!")
 				avatarembed.set_author(name=message.author.name)
 				avatarembed.set_image(url=escolhido_a.avatar_url)
 				await client.send_message(message.channel, embed=avatarembed)
 				
 		except:
-			avatarembed = discord.Embed(title="",color=0x5e003e,description="[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!")
+			avatarembed = discord.Embed(title="",color=kcolor,description="[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!")
 			avatarembed.set_author(name=message.author.name)
 			avatarembed.set_image(url=message.author.avatar_url)
 			await client.send_message(message.channel, embed=avatarembed)
+			
+	if message.content.lower().startswith("k>invite"):
+		await client.send_message(message.channel, "{} -- https://discordapp.com/oauth2/authorize?client_id=454018497995997184&permissions=8&scope=bot".format(str("<@"+message.author.id+">")))
+		
+			
+			
 		
 		
 		
