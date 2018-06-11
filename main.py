@@ -21,20 +21,20 @@ client = discord.Client()
 @client.event
 async def on_ready():
 	wikipedia.set_lang("pt")
-	await client.change_presence(game=discord.Game(name='k!ajuda', url='https://www.twitch.tv/deivizin_', type=1))
 	print("")
 	print("LIGADA COM SUCESSO!")
 	print("")
+	await client.change_presence(game=discord.Game(name='k>ajuda', url='https://www.twitch.tv/deivizin_', type=1))
 	
 @client.event
 async def on_message(message):
 	if message.content.lower().startswith("<@454018497995997184>"):
-		await client.send_message(message.channel, "{} -- Meu prefixo atual desse servidor é `k!`".format("<@"+str(message.author.id)+">"))
-		
-	if message.content.lower().startswith("k!secret"):
+		await client.send_message(message.channel, "{} -- Meu prefixo atual desse servidor é `k>`".format("<@"+str(message.author.id)+">"))
+	
+	if message.content.lower().startswith("k>secret"):
 		await client.send_message(message.channel, "{} -- ErRoR 4o4".format("<@"+str(message.author.id)+">"))
-		
-	if message.content.lower().startswith("k!wiki"):
+	
+	if message.content.lower().startswith("k>wiki"):
 		await client.send_message(message.channel, "{} -- Pesquisando na wikipedia, aguarde...".format("<@"+str(message.author.id)+">"))
 		try:
 			argumentos = message.content[7:]
@@ -50,8 +50,8 @@ async def on_message(message):
 			await client.send_message(message.channel, embed=embed)
 		except:
 			await client.send_message(message.channel, "{} -- Desculpe mais algo deu errado ou está pagina do wikipédia não existe :tired_face:".format("<@"+str(message.author.id)+">"))
-			
-	if message.content.startswith('k!ajuda'):
+	
+	if message.content.startswith('k>ajuda'):
 		await client.send_message(message.channel, "{} -- Enviei meus comandos no seu **privado** :inbox_tray:".format("<@" + str(message.author.id) + ">"))
 
 		ajudaembedf=discord.Embed(color=0xea03f9,icon_url="https://i.imgur.com/rdm3W9t.png")
@@ -61,20 +61,19 @@ async def on_message(message):
 		ajudaembedf.set_author(name="Comandos sobre o discord", icon_url="https://i.imgur.com/rdm3W9t.png")
 		ajudaembedff.set_author(name="Comandos sobre mim", icon_url="https://i.imgur.com/rdm3W9t.png")
 		ajudaembedfff.set_author(name="Comandos diversos", icon_url="https://i.imgur.com/rdm3W9t.png")
-		ajudaembedf.add_field(name="k!avatar `(usuario)`", value="Use para capturar uma imagem de certo perfil", inline=False)
-		ajudaembedff.add_field(name="k!donate", value="Para ver as formas de me ajudar", inline=False)
-		ajudaembedff.add_field(name="k!invite", value="Para poder me adicionar em seu servidor", inline=False)
-		ajudaembedff.add_field(name="k!botinfo", value="Para conhecer um pouco mais de mim", inline=False)
-		ajudaembedfff.add_field(name="k!wiki `(enciclopédia)`", value="Faz uma pesquisa na wikipedia", inline=False)
-		ajudaembedfff.add_field(name="k!fofoca", value="Fala de umas fofoquinhas que estão acontecendo `(Indisponível)`", inline=False)
+		ajudaembedf.add_field(name="k>avatar `(usuario)`", value="Use para capturar uma imagem de certo perfil", inline=False)
+		ajudaembedff.add_field(name="k>donate", value="Para ver as formas de me ajudar", inline=False)
+		ajudaembedff.add_field(name="k>invite", value="Para poder me adicionar em seu servidor", inline=False)
+		ajudaembedff.add_field(name="k>botinfo", value="Para conhecer um pouco mais de mim", inline=False)
+		ajudaembedfff.add_field(name="k>wiki `(enciclopédia)`", value="Faz uma pesquisa na wikipedia", inline=False)
+		ajudaembedfff.add_field(name="k>fofoca", value="Fala de umas fofoquinhas que estão acontecendo `(Indisponível)`", inline=False)
 
 		#ajudaembed.set_image(url="https://cdn.discordapp.com/attachments/454350443276140586/455106888506540032/Image__198761_1517969068.jpeg")
 		ajudaembedfff.set_footer(text="ATT: DEIVIZIN e CentenoBR")
 		await client.send_message(message.author, embed=ajudaembedf)	
 		await client.send_message(message.author, embed=ajudaembedff)
 		await client.send_message(message.author, embed=ajudaembedfff)
-		
-	if message.content.lower().startswith("k!avatar"):
+	if message.content.lower().startswith("k>avatar"):
 		try:
 			#argumentos_f = message.content[:9]
 			#argumentos = argumentos_f.split()[1]
@@ -89,17 +88,6 @@ async def on_message(message):
 			avatarembed.set_author(name=message.author.name)
 			avatarembed.set_image(url=message.author.avatar_url)
 			await client.send_message(message.channel, embed=avatarembed)
-			
-
-#@client.event
-#async def on_member_ban(user):
-    #channel = discord.utils.find(lambda c: c.name == 'punicoes', user.server.channels)
-   # embedban = discord.Embed(title='Banimento!', description='O membro **{0.name}** foi banido do servidor!\n'
-                                                             #'\nEspero que tenha aprendido a lição!'.format(user),
-                          #color=0x5e003e)
-   # embedban.set_image(url='https://media.giphy.com/media/upT3Tbwupcbok/giphy.gif')
-    #embedban.set_thumbnail(url=user.avatar_url)
-    #await client.send_message(channel, embed=embedban)
 		
 		
 		
