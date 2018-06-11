@@ -23,7 +23,11 @@ client = discord.Client()
 @client.event
 async def on_ready():
 	wikipedia.set_lang("pt")
-	print(str(client.servers))
+	
+	for legal in client.servers:
+		print(legal)
+	
+	print("")
 	print("LIGADA COM SUCESSO!")
 	print("")
 	await client.change_presence(game=discord.Game(name='k!ajuda', url='https://www.twitch.tv/deivizin_', type=1))
