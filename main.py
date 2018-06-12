@@ -41,19 +41,19 @@ async def on_message(message):
 	if message.content.lower().startswith("<@454018497995997184>") or "Direct Message" in str(message.channel):
 		if "Direct Message" in str(message.channel):
 			if "<@454018497995997184>" in message.content:
-				await client.send_message(message.channel, "{} -- **Eu não gosto de ser mencionada no meu privado :rage: **".format(str("<@"+message.author.id+">")))
+				pass
 		else:
 			await client.send_message(message.channel, "{} -- Meu prefixo atual desse servidor é `k>`".format("<@"+str(message.author.id)+">"))
 	
 	if message.content.lower().startswith("k>secret"):
 		if "Direct Message" in str(message.channel):
-			await client.send_message(message.channel, "{} -- **Você não pode usar comandos no meu privado :rage: **".format(str("<@"+message.author.id+">")))
+			 pass
 		else:
 			await client.send_message(message.channel, "{} -- ErRoR 4o4".format("<@"+str(message.author.id)+">"))
 	
 	if message.content.lower().startswith("k>wiki"):
 		if "Direct Message" in str(message.channel):
-			await client.send_message(message.channel, "{} -- **Você não pode usar comandos no meu privado :rage: **".format(str("<@"+message.author.id+">")))
+			pass
 		else:
 			await client.send_message(message.channel, "{} -- Pesquisando na wikipedia, aguarde...".format("<@"+str(message.author.id)+">"))
 			try:
@@ -73,7 +73,7 @@ async def on_message(message):
 	
 	if message.content.startswith('k>ajuda'):
 		if "Direct Message" in str(message.channel):
-			await client.send_message(message.channel, "{} -- **Você não pode usar comandos no meu privado :rage: **".format(str("<@"+message.author.id+">")))
+			pass
 		else:
 		
 			await client.send_message(message.channel, "{} -- Enviei meus comandos no seu **privado** :inbox_tray:".format("<@" + str(message.author.id) + ">"))
@@ -100,7 +100,7 @@ async def on_message(message):
 		
 	if message.content.lower().startswith("k>avatar"):
 		if "Direct Message" in str(message.channel):
-			await client.send_message(message.channel, "{} -- **Você não pode usar comandos no meu privado :rage: **".format(str("<@"+message.author.id+">")))
+			pass
 		else:
 			try:
 				#argumentos_f = message.content[:9]
@@ -127,13 +127,13 @@ async def on_message(message):
 			
 	if message.content.lower().startswith("k>invite"):
 		if "Direct Message" in str(message.channel):
-			await client.send_message(message.channel, "{} -- **Você não pode usar comandos no meu privado :rage: **".format(str("<@"+message.author.id+">")))	
+			pass	
 		else:
 			await client.send_message(message.channel, "https://discordapp.com/oauth2/authorize?client_id=454018497995997184&permissions=8&scope=bot {}".format(str("<@"+message.author.id+">")))
 			
 	if message.content.startswith('k>ping'):
 		if "Direct Message" in str(message.channel):
-			await client.send_message(message.channel, "{} -- **Você não pode usar comandos no meu privado :rage: **".format(str("<@"+message.author.id+">")))
+			pass
 		else:
 			now = datetime.datetime.now()
 			p = now - message.timestamp
