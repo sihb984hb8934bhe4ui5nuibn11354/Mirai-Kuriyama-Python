@@ -4,7 +4,7 @@ import wikipedia
 import random
 import datetime
 
-kcolor = 0x5e003e
+kcolor = 0x7219ff
 
 #if message.content.lower().startswith("k!fofoca"):
 	#fofocas = ["{} -- Coitado(a) do(a) **__{}__** foi flagrado(a) na escola! :scream: ","{} -- Eu ouvir dizer que o(a) **__{}__** faltou a aula para fazer coisas com o(a) prim... :rolling_eyes:","{} -- Os relacionamentos estão indo bem para o(a) **__{}__** ( ͡° ͜ʖ ͡°) :laughing:","{} -- **__{}__** Fez um mijão numa festa e não tinha roupa reserva :confused:","{} -- **__{}__** Olhou-se no espelho e saiu correndo :laughing:"]
@@ -59,7 +59,7 @@ async def on_message(message):
 			try:
 				argumentos = message.content[7:]
 				sf = wikipedia.page(argumentos)
-				embed = discord.Embed(title="Pesquisa da Wikipedia",description="",color=kcolor)
+				embed = discord.Embed(title="Pesquisa da Wikipedia",description="",color=0xf6d612)
 				try:
 					embed.set_image(url=sf.images[0])
 				except:
@@ -108,19 +108,19 @@ async def on_message(message):
 				#escolhido = discord.utils.get(client.get_all_members(), id=str(escolhido_random))
 				try:
 					escolhido_a = discord.utils.get(client.get_all_members(), id=str(message.mentions[0].id))
-					avatarembed = discord.Embed(title="",color=kcolor,description="[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!")
+					avatarembed = discord.Embed(title="",color=0x0000ff,description="[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!")
 					avatarembed.set_author(name=message.author.name)
 					avatarembed.set_image(url=escolhido_a.avatar_url)
 					await client.send_message(message.channel, embed=avatarembed)
 				except:
 					escolhido_a = discord.utils.get(client.get_all_members(), id=str(message.content[9:]))
-					avatarembed = discord.Embed(title="",color=kcolor,description="[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!")
+					avatarembed = discord.Embed(title="",color=0x0000ff,description="[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!")
 					avatarembed.set_author(name=message.author.name)
 					avatarembed.set_image(url=escolhido_a.avatar_url)
 					await client.send_message(message.channel, embed=avatarembed)
 				
 			except:
-				avatarembed = discord.Embed(title="",color=kcolor,description="[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!")
+				avatarembed = discord.Embed(title="",color=0x0000ff,description="[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!")
 				avatarembed.set_author(name=message.author.name)
 				avatarembed.set_image(url=message.author.avatar_url)
 				await client.send_message(message.channel, embed=avatarembed)
@@ -132,11 +132,14 @@ async def on_message(message):
 			await client.send_message(message.channel, "https://discordapp.com/oauth2/authorize?client_id=454018497995997184&permissions=8&scope=bot {}".format(str("<@"+message.author.id+">")))
 			
 	if message.content.startswith('k>ping'):
-		now = datetime.datetime.now()
-		p = now - message.timestamp
-		await client.send_message(message.channel, "<@"+str(message.author.id)+">")
-		ping_embed = discord.Embed(title="Meu ping:", color=0xcd0000, description=' :bar_chart: = **{} ms!**'.format(p.microseconds // 10000))
-		await client.send_message(message.channel, embed=ping_embed)
+		if "Direct Message" in str(message.channel):
+			await client.send_message(message.channel, "{} -- Você não pode usar comandos no meu privado :rage: ".format(str("<@"+message.author.id+">")))
+		else:
+			now = datetime.datetime.now()
+			p = now - message.timestamp
+			await client.send_message(message.channel, "<@"+str(message.author.id)+">")
+			ping_embed = discord.Embed(title="Meu ping:", color=0xcd0000, description=' :bar_chart: = **{} ms!**'.format(p.microseconds // 10000))
+			await client.send_message(message.channel, embed=ping_embed)
 		
 
 		
