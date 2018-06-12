@@ -3,7 +3,6 @@ import asyncio
 import wikipedia
 import random
 import datetime
-from datetime import datetime
 
 kcolor = 0x5e003e
 
@@ -89,6 +88,7 @@ async def on_message(message):
 			ajudaembedf.add_field(name="k>avatar `(usuario)`", value="Use para capturar uma imagem de certo perfil", inline=False)
 			ajudaembedff.add_field(name="k>invite", value="Para poder me adicionar em seu servidor", inline=False)
 			#ajudaembedff.add_field(name="k>botinfo", value="Para conhecer um pouco mais de mim", inline=False)
+			ajudaembedff.add_field(name="k>ping", value="Usado para mostrar meu ping atual", inline=False)
 			ajudaembedfff.add_field(name="k>wiki `(enciclopédia)`", value="Faz uma pesquisa na wikipedia", inline=False)
 			ajudaembedfff.add_field(name="k>fofoca", value="Fala de umas fofoquinhas que estão acontecendo `(Indisponível)`", inline=False)
 
@@ -134,7 +134,8 @@ async def on_message(message):
 	if message.content.startswith('k>ping'):
         	now = datetime.utcnow()
         	p = now - message.timestamp
-        	ping_embed = discord.Embed(title="Meu ping:", color=0x5e003e, description=' :bar_chart: = **{} ms!**'.format(p.microseconds // 10000))
+		await client.send_message(message.channel, "<@"+str(message.author.id)+">")
+        	ping_embed = discord.Embed(title="Meu ping:", color=0xFF8000, description=' :bar_chart: = **{} ms!**'.format(p.microseconds // 10000))
         	await client.send_message(message.channel, embed=ping_embed)
 		
 
