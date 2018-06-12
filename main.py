@@ -135,7 +135,7 @@ async def on_message(message):
 		now = datetime.datetime.now()
 		p = now - message.timestamp
 		await client.send_message(message.channel, "<@"+str(message.author.id)+">")
-		ping_embed = discord.Embed(title="Meu ping:", color=0xFF8000, description=' :bar_chart: = **{} ms!**'.format(p.microseconds // 10000))
+		ping_embed = discord.Embed(title="Meu ping:", color=0x5e003e, description=' :bar_chart: = **{} ms!**'.format(p.microseconds // 10000))
 		await client.send_message(message.channel, embed=ping_embed)
 		
 
