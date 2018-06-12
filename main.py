@@ -3,6 +3,9 @@ import asyncio
 import wikipedia
 import random
 import datetime
+import os
+
+token_a = str(os.environ.get('TOKEN', None))
 
 kcolor = 0x7219ff
 
@@ -144,7 +147,7 @@ async def on_message(message):
 		
 		
 		
-client.run("NDU0MDE4NDk3OTk1OTk3MTg0.DfrwpQ.sDbmb8rOQ1mz4ghAk3lsGYCx-1g")
+client.run(token_a)
 
 
 
