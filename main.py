@@ -3,6 +3,7 @@ import asyncio
 import wikipedia
 import random
 import datetime
+from datetime import datetime
 
 kcolor = 0x5e003e
 
