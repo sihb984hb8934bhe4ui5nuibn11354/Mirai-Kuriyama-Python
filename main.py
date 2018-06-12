@@ -108,19 +108,19 @@ async def on_message(message):
 				#escolhido = discord.utils.get(client.get_all_members(), id=str(escolhido_random))
 				try:
 					escolhido_a = discord.utils.get(client.get_all_members(), id=str(message.mentions[0].id))
-					avatarembed = discord.Embed(title="",color=0x0000ff,description="[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!")
+					avatarembed = discord.Embed(title="",color=0x0000ff,description="**[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!**")
 					avatarembed.set_author(name=message.author.name)
 					avatarembed.set_image(url=escolhido_a.avatar_url)
 					await client.send_message(message.channel, embed=avatarembed)
 				except:
 					escolhido_a = discord.utils.get(client.get_all_members(), id=str(message.content[9:]))
-					avatarembed = discord.Embed(title="",color=0x0000ff,description="[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!")
+					avatarembed = discord.Embed(title="",color=0x0000ff,description="**[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!**")
 					avatarembed.set_author(name=message.author.name)
 					avatarembed.set_image(url=escolhido_a.avatar_url)
 					await client.send_message(message.channel, embed=avatarembed)
 				
 			except:
-				avatarembed = discord.Embed(title="",color=0x0000ff,description="[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!")
+				avatarembed = discord.Embed(title="",color=0x0000ff,description="**[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!**")
 				avatarembed.set_author(name=message.author.name)
 				avatarembed.set_image(url=message.author.avatar_url)
 				await client.send_message(message.channel, embed=avatarembed)
