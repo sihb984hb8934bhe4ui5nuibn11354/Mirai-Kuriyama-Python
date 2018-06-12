@@ -130,7 +130,7 @@ async def on_message(message):
 		else:
 			await client.send_message(message.channel, "https://discordapp.com/oauth2/authorize?client_id=454018497995997184&permissions=8&scope=bot {}".format(str("<@"+message.author.id+">")))
 			
-	    if message.content.startswith('bt>ping'):
+	if message.content.startswith('k>ping'):
         	now = datetime.utcnow()
         	p = now - message.timestamp
         	ping_embed = discord.Embed(title="Meu ping:", color=0xFF8000, description=' :bar_chart: = **{} ms!**'.format(p.microseconds // 10000))
