@@ -4,6 +4,8 @@ import wikipedia
 import random
 import datetime
 import os
+import _thread as thread
+import time
 
 token_a = str(os.environ.get('TOKEN', None))
 
@@ -25,9 +27,17 @@ kcolor = 0x7219ff
 
 client = discord.Client()
 
-
+def twitch():
+	while True:
+		await client.change_presence(game=discord.Game(name='Estou atualmente em {} servidores'.format(str(number)), url='https://www.twitch.tv/deivizin_', type=1))
+		time.sleep(10)
+		await client.change_presence(game=discord.Game(name='k>ajuda'.format(str(number)), url='https://www.twitch.tv/deivizin_', type=1))
+	
 @client.event
 async def on_ready():
+	
+	thread.start_new_thread(twith, ())
+	
 	wikipedia.set_lang("pt")
 	number = 0
 	
@@ -37,7 +47,7 @@ async def on_ready():
 	print("")
 	print("LIGADA COM SUCESSO!")
 	print("")
-	await client.change_presence(game=discord.Game(name='k>ajuda | {} servidores'.format(str(number)), url='https://www.twitch.tv/deivizin_', type=1))
+	
 	
 @client.event
 async def on_message(message):
