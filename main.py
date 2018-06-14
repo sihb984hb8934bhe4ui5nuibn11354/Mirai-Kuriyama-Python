@@ -28,11 +28,10 @@ kcolor = 0x7219ff
 client = discord.Client()
 
 def twitch():
-	global client
 	while True:
 		#await client.change_presence(game=discord.Game(name='Estou atualmente em {} servidores'.format(str(number)), url='https://www.twitch.tv/deivizin_', type=1))
 		time.sleep(10)
-		await client.change_presence(game=discord.Game(name='Estou atualmente em {} servidores'.format(str(number)), url='https://www.twitch.tv/deivizin_', type=1))
+		client.change_presence(game=discord.Game(name='Estou atualmente em {} servidores'.format(str(number)), url='https://www.twitch.tv/deivizin_', type=1))
 		
 	
 @client.event
