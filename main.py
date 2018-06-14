@@ -29,9 +29,9 @@ client = discord.Client()
 
 def twitch():
 	while True:
-		await client.change_presence(game=discord.Game(name='Estou atualmente em {} servidores'.format(str(number)), url='https://www.twitch.tv/deivizin_', type=1)))
-		time.sleep(10)
-		await client.change_presence(game=discord.Game(name='k>ajuda'.format(str(number)), url='https://www.twitch.tv/deivizin_', type=1)))
+		#await client.change_presence(game=discord.Game(name='Estou atualmente em {} servidores'.format(str(number)), url='https://www.twitch.tv/deivizin_', type=1)))
+		#await client.change_presence(game=discord.Game(name='k>ajuda'.format(str(number)), url='https://www.twitch.tv/deivizin_', type=1)))
+		pass
 	
 @client.event
 async def on_ready():
