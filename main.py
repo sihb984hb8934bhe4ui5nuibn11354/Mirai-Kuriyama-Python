@@ -48,13 +48,13 @@ async def on_message(message):
 		else:
 			await client.send_message(message.channel, "{} -- Meu prefixo atual desse servidor é `k>`".format("<@"+str(message.author.id)+">"))
 	
-	if message.content.lower() == "k>secret":
+	if message.content.lower().split()[0] == "k>secret":
 		if "Direct Message" in str(message.channel):
 			 pass
 		else:
 			await client.send_message(message.channel, "{} -- ErRoR 4o4".format("<@"+str(message.author.id)+">"))
 	
-	if message.content.lower() == "k>wiki":
+	if message.content.lower().split()[0] == "k>wiki":
 		if "Direct Message" in str(message.channel):
 			pass
 		else:
@@ -74,7 +74,7 @@ async def on_message(message):
 			except:
 				await client.send_message(message.channel, "{} -- Desculpe mais algo deu errado ou está pagina do wikipédia não existe :tired_face:".format("<@"+str(message.author.id)+">"))
 	
-	if message.content.lower() == 'k>ajuda':
+	if message.content.lower().split()[0] == 'k>ajuda':
 		if "Direct Message" in str(message.channel):
 			pass
 		else:
@@ -101,7 +101,7 @@ async def on_message(message):
 			await client.send_message(message.author, embed=ajudaembedff)
 			await client.send_message(message.author, embed=ajudaembedfff)
 		
-	if message.content.lower() == "k>avatar":
+	if message.content.lower().split()[0] == "k>avatar":
 		if "Direct Message" in str(message.channel):
 			pass
 		else:
@@ -128,13 +128,13 @@ async def on_message(message):
 				avatarembed.set_image(url=message.author.avatar_url)
 				await client.send_message(message.channel, embed=avatarembed)
 			
-	if message.content.lower() == "k>invite":
+	if message.content.lower().split()[0] == "k>invite":
 		if "Direct Message" in str(message.channel):
 			pass	
 		else:
 			await client.send_message(message.channel, "https://discordapp.com/oauth2/authorize?client_id=454018497995997184&permissions=8&scope=bot {}".format(str("<@"+message.author.id+">")))
 			
-	if message.content.lower() == 'k>ping':
+	if message.content.lower().split()[0] == 'k>ping':
 		if "Direct Message" in str(message.channel):
 			pass
 		else:
