@@ -27,7 +27,7 @@ kcolor = 0x7219ff
 
 client = discord.Client()
 
-def twitch():
+async def twitch():
 	while True:
 		number = 0
 		for number_f in client.servers:
