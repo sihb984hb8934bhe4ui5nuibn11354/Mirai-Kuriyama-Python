@@ -29,7 +29,9 @@ client = discord.Client()
 
 def twitch():
 	while True:
-		#await client.change_presence(game=discord.Game(name='Estou atualmente em {} servidores'.format(str(number)), url='https://www.twitch.tv/deivizin_', type=1))
+		number = 0
+		for number_f in client.servers:
+			number = number+1
 		time.sleep(10)
 		client.change_presence(game=discord.Game(name='Estou atualmente em {} servidores'.format(str(number)), url='https://www.twitch.tv/deivizin_', type=1))
 		
@@ -39,10 +41,7 @@ async def on_ready():
 	thread.start_new_thread(twitch, ())
 	
 	wikipedia.set_lang("pt")
-	number = 0
-	
-	for number_f in client.servers:
-		number = number+1
+
 	
 	print("")
 	print("LIGADA COM SUCESSO!")
