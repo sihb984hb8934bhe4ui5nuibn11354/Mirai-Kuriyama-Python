@@ -35,8 +35,7 @@ def twitch():
 	
 @client.event
 async def on_ready():
-	
-	thread.start_new_thread(twith, ())
+	thread.start_new_thread(twitch, ())
 	
 	wikipedia.set_lang("pt")
 	number = 0
