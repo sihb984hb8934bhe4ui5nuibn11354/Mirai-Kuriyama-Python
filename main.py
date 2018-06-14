@@ -39,7 +39,6 @@ client = discord.Client()
 	
 @client.event
 async def on_ready():
-	thread.start_new_thread(twitch, ())
 	awaitclient.change_presence(url='https://www.twitch.tv/deivizin_', type=1)
 	#game=discord.Game(name='Estou atualmente em {} servidores'.format(str(number)), 
 	wikipedia.set_lang("pt")
