@@ -26,21 +26,9 @@ kcolor = 0x7219ff
 	#a
 
 client = discord.Client()
-
-#async def twitch():
-	#while True:
-		#number = 0
-		#for number_f in client.servers:
-			#number = number+1
-		#time.sleep(10)
-		#client.change_presence(game=discord.Game(name='Estou atualmente em {} servidores'.format(str(number)), url='https://www.twitch.tv/deivizin_', type=1))
-		
-		
 	
 @client.event
 async def on_ready():
-	await client.change_presence(game=discord.Game(url='https://www.twitch.tv/deivizin_', type=1))
-	#game=discord.Game(name='Estou atualmente em {} servidores'.format(str(number)), 
 	wikipedia.set_lang("pt")
 	print("")
 	print("LIGADA COM SUCESSO!")
