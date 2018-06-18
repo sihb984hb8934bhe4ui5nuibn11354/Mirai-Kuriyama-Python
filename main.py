@@ -91,19 +91,28 @@ async def on_message(message):
 		if "Direct Message" in str(message.channel):
 			pass
 		else:
-			await client.send_message(message.channel, "{}, enviei no seu privado :inbox_tray:".format(str("<@"+message.author.id+">")))
-			
-			embedajuda = discord.Embed(description="Olá meu nome é **Mikoto**.\n"
-                                              		       "Bem meus scripts foram feitos em __python__ e __javascript__(em js é pouco)\n"
-                                                               "Para Saber meus comandos digite **,comandos**\n"
-                                                               "Para saber um pouco mais sobre meus criadores digite **!mdevs**\n"
-                                                               "Quer entrar em meu servidor? digite **,servidor**`(indisponível)`\n"
-                                                               "Quer me adicionar em um servidor? digite **,invite**", color=0x4F0A89)
-       			embedajuda.set_author(name="Precisa de ajuda?")
-       			embedajuda.set_thumbnail(url="https://cdn.discordapp.com/attachments/454350443276140586/457161554798968844/a7d651521d2ae91e49258ae0978aa96c.png")
-       			embedajuda.add_field(name="E ainda estou em desenvolvimento ;u;", value='Fase o que se meus criadores são incompetentes ¯\_(ツ)_/¯', inline=True)
-       			embedajuda.set_footer(text="Mikoto", icon_url="https://cdn.discordapp.com/avatars/454018497995997184/0207e69104c285b921b18117bd6bf6ef.webp?size=1024")
-       			await client.send_message(message.author, embed = embedajuda)
+		
+			await client.send_message(message.channel, "{} -- Enviei meus comandos no seu **privado** :inbox_tray:".format("<@" + str(message.author.id) + ">"))
+
+			ajudaembedf=discord.Embed(color=kcolor,icon_url="https://i.imgur.com/rdm3W9t.png")
+			ajudaembedff=discord.Embed(color=kcolor,icon_url="https://i.imgur.com/rdm3W9t.png")
+			ajudaembedfff=discord.Embed(color=kcolor,icon_url="https://i.imgur.com/rdm3W9t.png")
+		
+			ajudaembedf.set_author(name="Comandos sobre o discord", icon_url="https://i.imgur.com/rdm3W9t.png")
+			ajudaembedff.set_author(name="Comandos sobre mim", icon_url="https://i.imgur.com/rdm3W9t.png")
+			ajudaembedfff.set_author(name="Comandos diversos", icon_url="https://i.imgur.com/rdm3W9t.png")
+			ajudaembedf.add_field(name=",avatar `(usuario)`", value="Use para capturar uma imagem de certo perfil", inline=False)
+			ajudaembedff.add_field(name=",minvite", value="Para poder me adicionar em seu servidor", inline=False)
+			#ajudaembedff.add_field(name="!mbotinfo", value="Para conhecer um pouco mais de mim", inline=False)
+			ajudaembedff.add_field(name=",ping", value="Usado para mostrar meu ping atual", inline=False)
+			ajudaembedfff.add_field(name=",wiki `(enciclopédia)`", value="Faz uma pesquisa na wikipedia", inline=False)
+			ajudaembedfff.add_field(name=",fofoca", value="Fala de umas fofoquinhas que estão acontecendo `(Indisponível)`", inline=False)
+
+				#ajudaembed.set_image(url="https://cdn.discordapp.com/attachments/454350443276140586/455106888506540032/Image__198761_1517969068.jpeg")
+			ajudaembedfff.set_footer(text="ATT: DEIVIZIN e CentenoBR")
+			await client.send_message(message.author, embed=ajudaembedf)	
+			await client.send_message(message.author, embed=ajudaembedff)
+			await client.send_message(message.author, embed=ajudaembedfff)
 		
 	if message.content.lower().split()[0] == ",avatar":
 		if "Direct Message" in str(message.channel):
