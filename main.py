@@ -73,7 +73,7 @@ async def on_message(message):
 		else:
 			await client.send_message(message.channel, "{} -- Pesquisando na wikipedia, aguarde...".format("<@"+str(message.author.id)+">"))
 			try:
-				argumentos = message.content[7:]
+				argumentos = message.content[6:]
 				sf = wikipedia.page(argumentos)
 				embed = discord.Embed(title="Pesquisa da Wikipedia",description="",color=0xf6d612)
 				try:
@@ -101,12 +101,12 @@ async def on_message(message):
 			ajudaembedf.set_author(name="Comandos sobre o discord", icon_url="https://i.imgur.com/rdm3W9t.png")
 			ajudaembedff.set_author(name="Comandos sobre mim", icon_url="https://i.imgur.com/rdm3W9t.png")
 			ajudaembedfff.set_author(name="Comandos diversos", icon_url="https://i.imgur.com/rdm3W9t.png")
-			ajudaembedf.add_field(name="!mavatar `(usuario)`", value="Use para capturar uma imagem de certo perfil", inline=False)
-			ajudaembedff.add_field(name="!minvite", value="Para poder me adicionar em seu servidor", inline=False)
+			ajudaembedf.add_field(name=",avatar `(usuario)`", value="Use para capturar uma imagem de certo perfil", inline=False)
+			ajudaembedff.add_field(name=",minvite", value="Para poder me adicionar em seu servidor", inline=False)
 			#ajudaembedff.add_field(name="!mbotinfo", value="Para conhecer um pouco mais de mim", inline=False)
-			ajudaembedff.add_field(name="!mping", value="Usado para mostrar meu ping atual", inline=False)
-			ajudaembedfff.add_field(name="!mwiki `(enciclopédia)`", value="Faz uma pesquisa na wikipedia", inline=False)
-			ajudaembedfff.add_field(name="!mfofoca", value="Fala de umas fofoquinhas que estão acontecendo `(Indisponível)`", inline=False)
+			ajudaembedff.add_field(name=",ping", value="Usado para mostrar meu ping atual", inline=False)
+			ajudaembedfff.add_field(name=",wiki `(enciclopédia)`", value="Faz uma pesquisa na wikipedia", inline=False)
+			ajudaembedfff.add_field(name=",fofoca", value="Fala de umas fofoquinhas que estão acontecendo `(Indisponível)`", inline=False)
 
 				#ajudaembed.set_image(url="https://cdn.discordapp.com/attachments/454350443276140586/455106888506540032/Image__198761_1517969068.jpeg")
 			ajudaembedfff.set_footer(text="ATT: DEIVIZIN e CentenoBR")
@@ -129,7 +129,7 @@ async def on_message(message):
 					avatarembed.set_image(url=escolhido_a.avatar_url)
 					await client.send_message(message.channel, embed=avatarembed)
 				except:
-					escolhido_a = discord.utils.get(client.get_all_members(), id=str(message.content[9:]))
+					escolhido_a = discord.utils.get(client.get_all_members(), id=str(message.content[8:]))
 					avatarembed = discord.Embed(title="",color=0x0000ff,description="**[Clique aqui](" + message.author.avatar_url + ") para acessar o link do avatar!**")
 					avatarembed.set_author(name=message.author.name)
 					avatarembed.set_image(url=escolhido_a.avatar_url)
