@@ -91,24 +91,12 @@ async def on_message(message):
 		if "Direct Message" in str(message.channel):
 			pass
 		else:
-			await client.send_message(message.channel, "{} -- Enviei meus comandos no seu **privado** :inbox_tray:".format("<@" + str(message.author.id) + ">"))
-			ajudaembedf=discord.Embed(color=kcolor,icon_url="https://i.imgur.com/rdm3W9t.png")
-			ajudaembedff=discord.Embed(color=kcolor,icon_url="https://i.imgur.com/rdm3W9t.png")
-			ajudaembedfff=discord.Embed(color=kcolor,icon_url="https://i.imgur.com/rdm3W9t.png")
-			ajudaembedf.set_author(name="Comandos sobre o discord", icon_url="https://i.imgur.com/rdm3W9t.png")
-			ajudaembedff.set_author(name="Comandos sobre mim", icon_url="https://i.imgur.com/rdm3W9t.png")
-			ajudaembedfff.set_author(name="Comandos diversos", icon_url="https://i.imgur.com/rdm3W9t.png")
-			ajudaembedf.add_field(name=",avatar `(usuario)`", value="Use para capturar uma imagem de certo perfil", inline=False)
-			ajudaembedff.add_field(name=",minvite", value="Para poder me adicionar em seu servidor", inline=False)
-			#ajudaembedff.add_field(name="!mbotinfo", value="Para conhecer um pouco mais de mim", inline=False)
-			ajudaembedff.add_field(name=",ping", value="Usado para mostrar meu ping atual", inline=False)
-			ajudaembedfff.add_field(name=",wiki `(enciclopédia)`", value="Faz uma pesquisa na wikipedia", inline=False)
-			ajudaembedfff.add_field(name=",fofoca", value="Fala de umas fofoquinhas que estão acontecendo `(Indisponível)`", inline=False)
-			#ajudaembed.set_image(url="https://cdn.discordapp.com/attachments/454350443276140586/455106888506540032/Image__198761_1517969068.jpeg")
-			ajudaembedfff.set_footer(text="ATT: DEIVIZIN e CentenoBR")
-			await client.send_message(message.author, embed=ajudaembedf)	
-			await client.send_message(message.author, embed=ajudaembedff)
-			await client.send_message(message.author, embed=ajudaembedfff)
+			embedcomandos = discord.Embed(description="**,avatar** `(usuário)` - para fazer download de algum avatar\n**,invite** - para pegar meu link de invite\n**,ping** - para ver meu ping(latência)\n**,wiki** `(enciclopédia)` - para fazer uma pesquisa na Wikipédia\n**,fofoca** `indisponível`- para saber de algumas coisas que acontecem com os usuários\n**,devs** `indisponível` - para saber alguma informações sobre meus criadores\n**,bug** - para saber o que fazer se encontrou algum bug em mim\n**,servidor** - para poder entrar em meu servidor\n**,musica** `indisponível` - para ver meus comandos de música\n**,site** `indisponível` - para entrar no meu site\n**,social** `indisponível` - para acessar as rede sócias mais rapidamente\n**,donete** - para ver a formas de me ajudar a comprar um lanche\n**,trans**(lingua)(mensagem) - para traduzir uma mensagem", color=0x4F0A89)
+			embedcomandos.set_author(name="Meus comandos!")
+			embedcomandos.set_image(url="http://i2.wp.com/haruhichan.com/wpblog/wp-content/uploads/Misaka-Mikoto-%E2%80%93-Toaru-Majutsu-no-Index-tsundere.gif")
+			embedcomandos.set_footer(text="Mikoto", icon_url="https://cdn.discordapp.com/avatars/454018497995997184/0207e69104c285b921b18117bd6bf6ef.webp?size=1024")
+			await client.send_message(message.channel, "{}, enviei no seu privado :inbox_tray:".format(str("<@"+message.author.id+">")))
+			await client.send_message(message.author, embed=embedcomandos)
 		
 	if message.content.lower().split()[0] == ",avatar":
 		if "Direct Message" in str(message.channel):
@@ -151,29 +139,6 @@ async def on_message(message):
 			p = now - message.timestamp
 			ping_embed = discord.Embed(title=message.author.name, color=0xcd0000, description=' :bar_chart: = **{} ms!**'.format(p.microseconds // 10000))
 			await client.send_message(message.channel, embed=ping_embed)
-		
-    	if message.content.lower().split()[0] == ',comandos':
-		if "Direct Message" in str(message.channel):
-			pass
-		else:
-        		embedcomandos = discord.Embed(description="**,avatar** `(usuário)` - para fazer download de algum avatar\n"
-                                                  "**,invite** - para pegar meu link de invite\n"
-                                                  "**,ping** - para ver meu ping(latência)\n"
-                                                  "**,wiki** `(enciclopédia)` - para fazer uma pesquisa na Wikipédia\n"
-                                                  "**,fofoca** `indisponível`- para saber de algumas coisas que acontecem com os usuários\n"
-                                                  "**,devs** `indisponível` - para saber alguma informações sobre meus criadores\n"
-                                                  "**,bug** - para saber o que fazer se encontrou algum bug em mim\n"
-                                                  "**,servidor** - para poder entrar em meu servidor\n"
-                                                  "**,musica** `indisponível` - para ver meus comandos de música\n"
-                                                  "**,site** `indisponível` - para entrar no meu site\n"
-                                                  "**,social** `indisponível` - para acessar as rede sócias mais rapidamente\n"
-                                                  "**,donete** - para ver a formas de me ajudar a comprar um lanche\n"
-                                                  "**,trans**(lingua)(mensagem) - para traduzir uma mensagem", color=0x4F0A89)
-        		embedcomandos.set_author(name="Meus comandos!")
-        		embedcomandos.set_image(url="http://i2.wp.com/haruhichan.com/wpblog/wp-content/uploads/Misaka-Mikoto-%E2%80%93-Toaru-Majutsu-no-Index-tsundere.gif")
-        		embedcomandos.set_footer(text="Mikoto", icon_url="https://cdn.discordapp.com/avatars/454018497995997184/0207e69104c285b921b18117bd6bf6ef.webp?size=1024")
-        		await client.send_message(message.channel, "{}, enviei no seu privado :inbox_tray:".format(str("<@"+message.author.id+">")))
-        		await client.send_message(message.author, embed=embedcomandos)
 		
 		
 		
