@@ -35,7 +35,7 @@ async def on_ready():
 	print("")
 	
 
-    	while True:
+	while True:
 		await client.change_presence(game=discord.Game(name='Utilize ,ajuda', url='https://www.twitch.tv/deivizin_', type=1))
 		await asyncio.sleep(10)
 		script = "para "+str(len(client.servers))+" servidores | "+str(len(set(client.get_all_members())))+" usuários."
