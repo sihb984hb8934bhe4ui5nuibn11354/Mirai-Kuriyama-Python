@@ -91,17 +91,18 @@ async def on_message(message):
 		if "Direct Message" in str(message.channel):
 			pass
 		else:
+			await client.send_message(message.channel, "{}, enviei no seu privado :inbox_tray:".format(str("<@"+message.author.id+">")))
+			
 			embedajuda = discord.Embed(description="Olá meu nome é **Mikoto**.\n"
-                                              "Bem meus scripts foram feitos em __python__ e __javascript__(em js é pouco)\n"
-                                              "Para Saber meus comandos digite **,comandos**\n"
-                                              "Para saber um pouco mais sobre meus criadores digite **!mdevs**\n"
-                                              "Quer entrar em meu servidor? digite **,servidor**`(indisponível)`\n"
-                                              "Quer me adicionar em um servidor? digite **,invite**", color=0x4F0A89)
+                                              		       "Bem meus scripts foram feitos em __python__ e __javascript__(em js é pouco)\n"
+                                                               "Para Saber meus comandos digite **,comandos**\n"
+                                                               "Para saber um pouco mais sobre meus criadores digite **!mdevs**\n"
+                                                               "Quer entrar em meu servidor? digite **,servidor**`(indisponível)`\n"
+                                                               "Quer me adicionar em um servidor? digite **,invite**", color=0x4F0A89)
        			embedajuda.set_author(name="Precisa de ajuda?")
        			embedajuda.set_thumbnail(url="https://cdn.discordapp.com/attachments/454350443276140586/457161554798968844/a7d651521d2ae91e49258ae0978aa96c.png")
        			embedajuda.add_field(name="E ainda estou em desenvolvimento ;u;", value='Fase o que se meus criadores são incompetentes ¯\_(ツ)_/¯', inline=True)
        			embedajuda.set_footer(text="Mikoto", icon_url="https://cdn.discordapp.com/avatars/454018497995997184/0207e69104c285b921b18117bd6bf6ef.webp?size=1024")
-       			await client.send_message(message.channel, "{}, enviei no seu privado :inbox_tray:".format(str("<@"+message.author.id+">")))
        			await client.send_message(message.author, embed = embedajuda)
 		
 	if message.content.lower().split()[0] == ",avatar":
