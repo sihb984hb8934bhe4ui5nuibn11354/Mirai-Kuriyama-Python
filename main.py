@@ -57,15 +57,15 @@ async def on_message(message):
 			if "<@454018497995997184>" in message.content:
 				pass
 		else:
-			await client.send_message(message.channel, "{} -- Meu prefixo é `!m`".format("<@"+str(message.author.id)+">"))
+			await client.send_message(message.channel, "{} -- Meu prefixo é `,`".format("<@"+str(message.author.id)+">"))
 	
-	if message.content.lower().split()[0] == "!msecret":
+	if message.content.lower().split()[0] == ",secret":
 		if "Direct Message" in str(message.channel):
 			 pass
 		else:
 			await client.send_message(message.channel, "{} -- ErRoR 4o4".format("<@"+str(message.author.id)+">"))
 	
-	if message.content.lower().split()[0] == "!mwiki":
+	if message.content.lower().split()[0] == ",wiki":
 		if "Direct Message" in str(message.channel):
 			pass
 		else:
@@ -85,7 +85,7 @@ async def on_message(message):
 			except:
 				await client.send_message(message.channel, "{} -- Desculpe mais algo deu errado ou está pagina do wikipédia não existe :tired_face:".format("<@"+str(message.author.id)+">"))
 	
-	if message.content.lower().split()[0] == '!majuda':
+	if message.content.lower().split()[0] == ',ajuda':
 		if "Direct Message" in str(message.channel):
 			pass
 		else:
@@ -112,7 +112,7 @@ async def on_message(message):
 			await client.send_message(message.author, embed=ajudaembedff)
 			await client.send_message(message.author, embed=ajudaembedfff)
 		
-	if message.content.lower().split()[0] == "!mavatar":
+	if message.content.lower().split()[0] == ",avatar":
 		if "Direct Message" in str(message.channel):
 			pass
 		else:
@@ -139,13 +139,13 @@ async def on_message(message):
 				avatarembed.set_image(url=message.author.avatar_url)
 				await client.send_message(message.channel, embed=avatarembed)
 			
-	if message.content.lower().split()[0] == "!minvite":
+	if message.content.lower().split()[0] == ",invite":
 		if "Direct Message" in str(message.channel):
 			pass	
 		else:
 			await client.send_message(message.channel, "https://discordapp.com/oauth2/authorize?client_id=454018497995997184&permissions=8&scope=bot {}".format(str("<@"+message.author.id+">")))
 			
-	if message.content.lower().split()[0] == '!mping':
+	if message.content.lower().split()[0] == ',ping':
 		if "Direct Message" in str(message.channel):
 			pass
 		else:
