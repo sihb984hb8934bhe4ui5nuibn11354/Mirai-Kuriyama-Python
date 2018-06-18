@@ -95,7 +95,7 @@ async def on_message(message):
 			embedcomandos.set_author(name="Meus comandos!")
 			embedcomandos.set_image(url="http://i2.wp.com/haruhichan.com/wpblog/wp-content/uploads/Misaka-Mikoto-%E2%80%93-Toaru-Majutsu-no-Index-tsundere.gif")
 			embedcomandos.set_footer(text="Mikoto", icon_url="https://cdn.discordapp.com/avatars/454018497995997184/0207e69104c285b921b18117bd6bf6ef.webp?size=1024")
-			await client.send_message(message.channel, "{}, enviei no seu privado :inbox_tray:".format(str("<@"+message.author.id+">")))
+			await client.send_message(message.channel, "{}, Enviei no seu privado :inbox_tray:".format(str("<@"+message.author.id+">")))
 			await client.send_message(message.author, embed=embedcomandos)
 		
 	if message.content.lower().split()[0] == ",avatar":
