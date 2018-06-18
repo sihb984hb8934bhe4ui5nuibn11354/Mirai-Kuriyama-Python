@@ -34,16 +34,16 @@ async def on_ready():
 	print("LIGADA COM SUCESSO!")
 	print("")
 	
-	async while True:
-		await client.change_presence(game=discord.Game(name='Utilize ,ajuda', url='https://www.twitch.tv/deivizin_', type=1))
-		await asyncio.sleep(10)
-		script = "amor para "+str(len(client.servers))+" servidores | "+str(len(set(client.get_all_members())))+" usuários."
+	#while True:
+		#await client.change_presence(game=discord.Game(name='Utilize ,ajuda', url='https://www.twitch.tv/deivizin_', type=1))
+		#await asyncio.sleep(10)
+		script = "amor para "+str(len(set(client.get_all_members())))+" usuários. | !majuda"
 		await client.change_presence(game=discord.Game(name=script, type=1, url='https://www.twitch.tv/deivizin_'),status='streaming')
-		await asyncio.sleep(10)
-		script2 = "Estou em desenvolvimento! ;u;"
-		await client.change_presence(game=discord.Game(name=script2, type=1, url='https://www.twitch.tv/deivizin_'),status='streaming')
-		await asyncio.sleep(10)
-		script3 = "para olhar minha ajuda digite !majuda"
+		#await asyncio.sleep(10)
+		#script2 = "Estou em desenvolvimento! ;u;"
+		#await client.change_presence(game=discord.Game(name=script2, type=1, url='https://www.twitch.tv/deivizin_'),status='streaming')
+		#await asyncio.sleep(10)
+		#script3 = "para olhar minha ajuda digite !majuda"
 
 	
 @client.event
