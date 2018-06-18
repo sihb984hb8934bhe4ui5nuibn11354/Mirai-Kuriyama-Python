@@ -91,13 +91,10 @@ async def on_message(message):
 		if "Direct Message" in str(message.channel):
 			pass
 		else:
-		
 			await client.send_message(message.channel, "{} -- Enviei meus comandos no seu **privado** :inbox_tray:".format("<@" + str(message.author.id) + ">"))
-
 			ajudaembedf=discord.Embed(color=kcolor,icon_url="https://i.imgur.com/rdm3W9t.png")
 			ajudaembedff=discord.Embed(color=kcolor,icon_url="https://i.imgur.com/rdm3W9t.png")
 			ajudaembedfff=discord.Embed(color=kcolor,icon_url="https://i.imgur.com/rdm3W9t.png")
-		
 			ajudaembedf.set_author(name="Comandos sobre o discord", icon_url="https://i.imgur.com/rdm3W9t.png")
 			ajudaembedff.set_author(name="Comandos sobre mim", icon_url="https://i.imgur.com/rdm3W9t.png")
 			ajudaembedfff.set_author(name="Comandos diversos", icon_url="https://i.imgur.com/rdm3W9t.png")
@@ -107,8 +104,7 @@ async def on_message(message):
 			ajudaembedff.add_field(name=",ping", value="Usado para mostrar meu ping atual", inline=False)
 			ajudaembedfff.add_field(name=",wiki `(enciclopédia)`", value="Faz uma pesquisa na wikipedia", inline=False)
 			ajudaembedfff.add_field(name=",fofoca", value="Fala de umas fofoquinhas que estão acontecendo `(Indisponível)`", inline=False)
-
-				#ajudaembed.set_image(url="https://cdn.discordapp.com/attachments/454350443276140586/455106888506540032/Image__198761_1517969068.jpeg")
+			#ajudaembed.set_image(url="https://cdn.discordapp.com/attachments/454350443276140586/455106888506540032/Image__198761_1517969068.jpeg")
 			ajudaembedfff.set_footer(text="ATT: DEIVIZIN e CentenoBR")
 			await client.send_message(message.author, embed=ajudaembedf)	
 			await client.send_message(message.author, embed=ajudaembedff)
