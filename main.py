@@ -37,19 +37,19 @@ async def on_ready():
 
 	while True:
 		await client.change_presence(game=discord.Game(name='utilize ,ajuda', url='https://www.twitch.tv/deivizin_', type=1))
-		await asyncio.sleep(10)
-		script = " amor para "+str(len(client.servers))+" servidores | "+str(len(set(client.get_all_members())))+" usuários."
+		await asyncio.sleep(15)
+		script = "para "+str(len(client.servers))+" servidores | "+str(len(set(client.get_all_members())))+" usuários."
 		await client.change_presence(game=discord.Game(name=script, type=1, url='https://www.twitch.tv/deivizin_'),status='streaming')
-		await asyncio.sleep(10)
+		await asyncio.sleep(15)
 		script2 = "estou em desenvolvimento! ;u;"
 		await client.change_presence(game=discord.Game(name=script2, type=1, url='https://www.twitch.tv/deivizin_'),status='streaming')
-		await asyncio.sleep(10)
+		await asyncio.sleep(15)
 		script3 = "tem alguma dica? entre em meu servidor: ,servidor"
 		await client.change_presence(game=discord.Game(name=script3, type=1, url='https://www.twitch.tv/deivizin_'),status='streaming')
-		await asyncio.sleep(10)
+		await asyncio.sleep(15)
 		script4 = "prefixo padrão é ,"
 		await client.change_presence(game=discord.Game(name=script4, type=1, url='https://www.twitch.tv/deivizin_'),status='streaming')
-		await asyncio.sleep(10)
+		await asyncio.sleep(15)
 
 	
 @client.event
