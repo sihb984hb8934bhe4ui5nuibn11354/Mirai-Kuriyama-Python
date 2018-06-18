@@ -34,16 +34,22 @@ async def on_ready():
 	print("LIGADA COM SUCESSO!")
 	print("")
 	
-	#while True:
-		#await client.change_presence(game=discord.Game(name='Utilize ,ajuda', url='https://www.twitch.tv/deivizin_', type=1))
-		#await asyncio.sleep(10)
-		script = "amor para "+str(len(set(client.get_all_members())))+" usuários. | !majuda"
+
+    	while True:
+		await client.change_presence(game=discord.Game(name='Utilize ,ajuda', url='https://www.twitch.tv/deivizin_', type=1))
+		await asyncio.sleep(10)
+		script = "para "+str(len(client.servers))+" servidores | "+str(len(set(client.get_all_members())))+" usuários."
 		await client.change_presence(game=discord.Game(name=script, type=1, url='https://www.twitch.tv/deivizin_'),status='streaming')
-		#await asyncio.sleep(10)
-		#script2 = "Estou em desenvolvimento! ;u;"
-		#await client.change_presence(game=discord.Game(name=script2, type=1, url='https://www.twitch.tv/deivizin_'),status='streaming')
-		#await asyncio.sleep(10)
-		#script3 = "para olhar minha ajuda digite !majuda"
+		await asyncio.sleep(10)
+		script2 = "Estou em desenvolvimento! ;u;"
+		await client.change_presence(game=discord.Game(name=script2, type=1, url='https://www.twitch.tv/deivizin_'),status='streaming')
+		await asyncio.sleep(10)
+		script3 = "tem alguma dica? entre em meu servidor: ,servidor"
+		await client.change_presence(game=discord.Game(name=script3, type=1, url='https://www.twitch.tv/deivizin_'),status='streaming')
+		await asyncio.sleep(10)
+		script4 = "prefixo padrão é ,"
+		await client.change_presence(game=discord.Game(name=script4, type=1, url='https://www.twitch.tv/deivizin_'),status='streaming')
+		await asyncio.sleep(10)
 
 	
 @client.event
