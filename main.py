@@ -640,7 +640,7 @@ async def on_message(message):
             pass
         else:
             # await client.delete_message(message)
-            choice = random.randint(1, 6)
+            choice = randint(1, 6)
             embeddad = discord.Embed(title='🎲 Dado', description=' Joguei o dado, o resultado foi :   {}'.format(choice),
                                  colour=mcolor)
             embeddad.set_footer(text="Comando usado por {} as {} Hrs".format(message.author, datetime.datetime.now().hour),
@@ -860,8 +860,8 @@ async def on_message(message):
             if reaction.emoji == "👮" and msg.id == msg_id and user == msg_user:
                 comandemdmoderação = discord.Embed(
                                      title="Comandos de moderação!",
-                                     description="`=getban` - remove todos os banimentos do servidor;\n"
-                                                 "`=ban (usuário)` - banir um usuário com motivo;\n"
+                                     description="`=getban` - remove todos os banimentos do servidor\n"
+                                                 "`=ban (usuário)` - banir um usuário com motivo\n"
                                                  "`=unban (usuário)` - para retirar o ban de um usuário\n"
                                                  "`=clear` - para apagar até 100 mensagens\n"
                                                  "`=mute (usuário)` - para mutar um usuário (cargo *Muted* necessário)\n"
