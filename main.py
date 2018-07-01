@@ -530,7 +530,6 @@ async def on_message(message):
                                           color=mcolor,
                                           description=":bar_chart: meu ping: `{} ms!`\n"
                                                       ":bar_chart: seu ping: `{} ms!`".format(p.microseconds // 10000, round((t2 - t1) * 1000)))
-            ping_embed.set_thumbnail(url=client.avatar_url)
             ping_embed.set_footer(text="Comando usado por {} as {} Hrs".format(message.author, datetime.datetime.now().hour),
                 icon_url=message.author.avatar_url)
             await client.send_message(message.channel, embed=ping_embed)
@@ -828,7 +827,7 @@ async def on_message(message):
                           color=mcolor,
                           description="👮 - Moderação\n"
                                       "🔎 - Search\n"
-                                      "🗂 - Uteis\n"
+                                      "🗂 - Úteis\n"
                                       "📖 - Informações\n"
                                       "😜 - Diversão\n"
                                       "🤖 - Bot\n"
@@ -860,7 +859,7 @@ async def on_message(message):
 
             if reaction.emoji == "👮" and msg.id == msg_id and user == msg_user:
                 comandemdmoderação = discord.Embed(
-                                     title="Comandos de moderações!",
+                                     title="Comandos de moderação!",
                                      description="`=getban` - remove todos os banimentos do servidor;\n"
                                                  "`=ban` - banir um usuário com motivo;\n"
                                                  "`=unban` - para retirar o ban de um usuário\n"
@@ -891,7 +890,7 @@ async def on_message(message):
 
             if reaction.emoji == "🗂" and msg.id == msg_id and user == msg_user:
                 comandembuteis = discord.Embed(
-                                              title="Comandos uteis",
+                                              title="Comandos úteis!",
                                               description="`=py` - enviar uma mensagem no formato python\n"
                                                           "`=js` - enviar uma mensagem no formato javascript\n"
                                                           "`=votar` - fazer uma votação",
@@ -905,17 +904,17 @@ async def on_message(message):
 
             if reaction.emoji == "📖" and msg.id == msg_id and user == msg_user:
                 comandembinfo = discord.Embed(
-                                            title="Comandos de informação",
+                                            title="Comandos de informação!",
                                             description="`=botinfo` - ver as informações do bot\n"
                                                         "`=serverinfo` - ver as informações do servidor\n"
-                                                        "`=userinfo` - mostra asa informações do usúarios\n"
+                                                        "`=userinfo` - mostrar as informações do usuários\n"
                                                         "`=uptime` - ver o tempo em que estou online\n"
                                                         "`=bitcoin` - ver o preço do bitcoin\n"
                                                         "`=cargos` - ver os cargos do servidor\n"
-                                                        "`=avatar` - ver o avatar do usúario\n"
+                                                        "`=avatar` - ver o avatar do usuário\n"
                                                         "`=ping` - ver o meu e o seu ping\n"
                                                         "`=teste` - ver se estou online\n"
-                                                        "`=emojis` - ver os emojis do servidor(menos os animados)\n"
+                                                        "`=emojis` - ver os emojis do servidor (menos os animados)\n"
                                                         "`=canal` - vai mostrar as informações de um canal selecionado",
                                             color=mcolor
                                             )
@@ -929,8 +928,8 @@ async def on_message(message):
                 comandembfun = discord.Embed(
                                               title="Comandos de diversão!",
                                               description="`=virus` - vai colocar um virus no usúario mencionado\n"
-                                                          "`=moeda` - vai girar um moeda\n"
-                                                          "`=dado` - ver em qual dos de um dado vai cair\n"
+                                                          "`=moeda` - vai girar uma moeda\n"
+                                                          "`=dado` - ver em qual lado de um dado vai cair\n"
                                                           "`=say` - repetirar sua mensagem\n"
                                                           "`=ppt` - joquempô(pedra, papel, tesoura)",
                                               color=mcolor
@@ -946,9 +945,9 @@ async def on_message(message):
                                                 title="Comandos do bot!",
                                                 description="<@461322896065953808> - para ver o prefixo\n"
                                                             "`=ajuda` - para ver o embed de ajuda\n"
-                                                            "`=invite` - para pegar o link de invite\n"
-                                                            "`=servidor` - para pegar o link do servidor\n"
-                                                            "`=comandos` - para ve o embed de ajuda",
+                                                            "`=invite` - para pegar o meu link de invite\n"
+                                                            "`=servidor` - para pegar o link do meu servidor\n"
+                                                            "`=comandos` - para ver o meu embed de ajuda",
                                                 color=mcolor
                                                 )
                 comandembbot.set_author(name="Meus comandos!")
