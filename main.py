@@ -877,9 +877,9 @@ async def on_message(message):
             if reaction.emoji == "🔎" and msg.id == msg_id and user == msg_user:
                 comandembsearch = discord.Embed(
                                      title="Comandos de search!",
-                                     description="`=google (pesquisa)` - fazer uma pesquisa no google\n"
-                                                 "`=youtube (pesquisa)` - fazer uma pesquisa no youtube\n"
-                                                 "`=wiki (pesquisa)`- fazer uma pesquisa no wikipédia",
+                                     description="`=google (pesquisa)` - fazer uma simples pesquisa no google\n"
+                                                 "`=youtube (pesquisa)` - fazer uma simples pesquisa no youtube\n"
+                                                 "`=wiki (pesquisa)`- fazer uma pesquisa na wikipédia usando a api da wikipédia",
                                      color=mcolor
                                      )
                 comandembsearch.set_author(name="Meus comandos!")
