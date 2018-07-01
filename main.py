@@ -862,11 +862,11 @@ async def on_message(message):
                 comandemdmoderação = discord.Embed(
                                      title="Comandos de moderações!",
                                      description="`=getban` - remove todos os banimentos do servidor;\n"
-                                                 "`=ban` - banir um usúario com motivo;\n"
-                                                 "`=unban` - para retirar o ban de um usúario\n"
+                                                 "`=ban` - banir um usuário com motivo;\n"
+                                                 "`=unban` - para retirar o ban de um usuário\n"
                                                  "`=clear` - para apagar até 100 mensagens\n"
-                                                 "`=mute` - para mutar um usúario(cargo *Muted* necessário)\n"
-                                                 "`=unmute` - para retirar o ban de um usúario",
+                                                 "`=mute` - para mutar um usuário (cargo *Muted* necessário)\n"
+                                                 "`=unmute` - para retirar o mute de um usúario",
                                      color=mcolor
                                      )
                 comandemdmoderação.set_author(name="Meus comandos!",)
