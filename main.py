@@ -271,7 +271,7 @@ async def on_message(message):
         else:
             usermsgcod = message.content[4:]
             await client.send_message(message.channel,
-                                  '<:python:462612832341590016> {} enviou o segunte código:\n```python\n{} \n```'.format(
+                                  '<:python:462612832341590016> {} enviou o seguinte código:\n```python\n{} \n```'.format(
                                       message.author.mention, usermsgcod))
             await client.delete_message(message)
 
@@ -281,7 +281,7 @@ async def on_message(message):
         else:
             usermsgcod = message.content[4:]
             await client.send_message(message.channel,
-                                  '<:js:462612805699371011> {} enviou o segunte código:\n```javascript\n{} \n```'.format(
+                                  '<:js:462612805699371011> {} enviou o seguinte código:\n```javascript\n{} \n```'.format(
                                       message.author.mention, usermsgcod))
 
             await client.delete_message(message)
@@ -791,7 +791,7 @@ async def on_message(message):
                                                  "Infelizmente meu servidor não esta pronto, meu criador esta trabalhando nele.\n"
                                                  "Se quiser me adicional apenas digitar `=invite` não no meu privado.\n"
                                                  "Se quiser saber meus comandos digite `=comandos`.\n"
-                                                 "Bem é espero que apenas isto que deveria te dizer!\n"
+                                                 "Bem, espero que seja apenas isto que deveria te dizer!\n"
                                                  "Obrigada por estar me utilizando :3",
                                      color=mcolor
                                      )
