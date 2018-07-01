@@ -457,7 +457,7 @@ async def on_message(message):
                 embedbtc.set_author(name='Bitcoin!'.format(message.author.name))
                 embedbtc.add_field(name='Nome:', value="{}".format(nomebtc))
                 embedbtc.add_field(name='Valor:', value="{}".format(precobtc))
-                embedbtc.add_field(name='fonte:', value="{}".format(fontebtc))
+                embedbtc.add_field(name='Fonte:', value="{}".format(fontebtc))
                 embedbtc.set_footer(text="Comando usado por {} as {} Hrs".format(message.author, datetime.datetime.now().hour),
                     icon_url=message.author.avatar_url)
                 embedbtc.set_thumbnail(url=imgbtc)
