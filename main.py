@@ -866,7 +866,7 @@ async def on_message(message):
                                                  "`=unban` - para retirar o ban de um usuário\n"
                                                  "`=clear` - para apagar até 100 mensagens\n"
                                                  "`=mute` - para mutar um usuário (cargo *Muted* necessário)\n"
-                                                 "`=unmute` - para retirar o mute de um usúario",
+                                                 "`=unmute` - para retirar o mute de um usuário",
                                      color=mcolor
                                      )
                 comandemdmoderação.set_author(name="Meus comandos!",)
