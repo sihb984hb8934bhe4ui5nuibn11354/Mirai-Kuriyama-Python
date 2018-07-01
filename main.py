@@ -63,7 +63,7 @@ def wiki_summary(arg):
 
 @client.event
 async def on_ready():
-    wikipedia.set_lang('pt-br')
+    wikipedia.set_lang('pt')
     print("=================================")
     print("Nome : %s" % client.user.name)
     print("ID : %s" % client.user.id)
