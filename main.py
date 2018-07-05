@@ -16,6 +16,7 @@ import io
 import safygiphy
 import json
 import os
+import json
 from googletrans import Translator
 import wikipedia
 import servidormirai
@@ -102,13 +103,15 @@ async def on_ready():
     else:
         print("SERVIDOR FTP OFFLINE")
             
-    valor = servidormirai.baixar_valor("servers.json")
-    print(valor)
+    config = json.loads(servidormirai.baixar_valor("config.json"))
+    
         
         
 @client.event
 async def on_message(message):
 
+#COMANDOS PARA TESTES
+                
 #  _           __  __               _
 # / |         |  \/  |   ___     __| |   ___   _ __    __ _    ___    __ _    ___
 # | |  _____  | |\/| |  / _ \   / _` |  / _ \ | '__|  / _` |  / __|  / _` |  / _ \
@@ -215,7 +218,11 @@ async def on_message(message):
                 await client.remove_roles(user, role)
             finally:
                 pass
-
+    
+    if message.content.lower().split()[0] == "=invite":
+        if not message.author.server_permissions.manage_roles:
+            await client.create_invite(destination=ctx.message.channel)
+            
 #  _____   _____   _____   _____   _____   _____   _____   _____   _____
 # |_____| |_____| |_____| |_____| |_____| |_____| |_____| |_____| |_____|
 #
@@ -874,6 +881,7 @@ async def on_message(message):
                                                  "`=unban (usuário)` - para retirar o ban de um usuário\n"
                                                  "`=clear` - para apagar até 100 mensagens\n"
                                                  "`=mute (usuário)` - para mutar um usuário (cargo *Muted* necessário)\n"
+                                                 "`=invite` - criar link de convite do servidor\n"
                                                  "`=unmute (usuário)` - para retirar o mute de um usuário",
                                      color=mcolor
                                      )
