@@ -220,6 +220,7 @@ async def on_message(message):
                 pass
     
     if message.content.lower().split()[0] == "=cinvite":
+        if not message.author.server_permissions.manage_roles:
             link = await client.create_invite(destination=message.channel)
             await client.send_message(message.channel, link)
             
