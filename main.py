@@ -97,12 +97,12 @@ async def on_ready():
         #script5 = "atualmente tenho: 17 comandos"
         #await client.change_presence(game=discord.Game(name=script5, type=1, url='https://www.twitch.tv/deivizin_'), status='streaming')
         #await asyncio.sleep(5)
-        if servidormirai.online():
-            print("SERVIDOR FTP ONLINE")
-        else:
-            print("SERVIDOR FTP OFFLINE")
+    if servidormirai.online():
+        print("SERVIDOR FTP ONLINE")
+    else:
+        print("SERVIDOR FTP OFFLINE")
             
-        servidormirai.salvar("LICENSE")
+    servidormirai.salvar("LICENSE")
         
         
 @client.event
