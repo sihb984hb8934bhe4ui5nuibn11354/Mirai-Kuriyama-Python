@@ -19,7 +19,6 @@ def salvar(nome_arquivo):
   try:
     username = os.environ.get('USERNAME', None)
     password = os.environ.get('PASSWORD', None)
-    ip = os.environ.get('IP', None))
     ftp = ftplib.FTP()
     ftp.connect("ftp.ezyro.com", 21)
     ftp.login(username, password)
