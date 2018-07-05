@@ -219,9 +219,9 @@ async def on_message(message):
             finally:
                 pass
     
-    if message.content.lower().split()[0] == "=invite":
-        if not message.author.server_permissions.manage_roles:
-            await client.create_invite(destination=ctx.message.channel)
+    if message.content.lower().split()[0] == "=2":
+            link = await client.create_invite(destination=ctx.message.channel)
+            await client.send_message(message.channel, link)
             
 #  _____   _____   _____   _____   _____   _____   _____   _____   _____
 # |_____| |_____| |_____| |_____| |_____| |_____| |_____| |_____| |_____|
