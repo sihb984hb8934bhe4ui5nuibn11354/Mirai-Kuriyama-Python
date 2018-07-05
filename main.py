@@ -102,7 +102,8 @@ async def on_ready():
     else:
         print("SERVIDOR FTP OFFLINE")
             
-    servidormirai.salvar("LICENSE")
+    valor = servidormirai.baixar_valor("LICENSE")
+    print(valor)
         
         
 @client.event
