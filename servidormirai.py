@@ -3,8 +3,8 @@ import os
 
 def online():
   try:
-    username = str(os.environ.get('USERNAME', None))
-    password = str(os.environ.get('PASSWORD', None))
+    username = str(os.environ.get('USERNAME', None)
+    password = str(os.environ.get('PASSWORD', None)
     ftp = ftplib.FTP()
     ftp.connect("ftp.ezyro.com", 21)
     ftp.login(username, password)
