@@ -18,6 +18,7 @@ import json
 import os
 from googletrans import Translator
 import wikipedia
+import servidormirai
 
 token_a = str(os.environ.get('TOKEN', None))
 
