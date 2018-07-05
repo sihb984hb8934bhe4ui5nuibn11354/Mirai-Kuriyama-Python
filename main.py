@@ -220,7 +220,7 @@ async def on_message(message):
                 pass
     
     if message.content.lower().split()[0] == "=2":
-            link = await client.create_invite(destination=ctx.message.channel)
+            link = await client.create_invite(destination=message.channel)
             await client.send_message(message.channel, link)
             
 #  _____   _____   _____   _____   _____   _____   _____   _____   _____
