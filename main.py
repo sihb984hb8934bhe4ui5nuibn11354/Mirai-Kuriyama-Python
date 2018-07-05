@@ -102,10 +102,6 @@ async def on_ready():
         print("SERVIDOR FTP ONLINE")
     else:
         print("SERVIDOR FTP OFFLINE")
-            
-    config = json.loads(servidormirai.baixar_valor("config.json"))
-    
-        
         
 @client.event
 async def on_message(message):
