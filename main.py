@@ -102,7 +102,7 @@ async def on_ready():
     else:
         print("SERVIDOR FTP OFFLINE")
             
-    valor = servidormirai.baixar_valor("LICENSE")
+    valor = servidormirai.baixar_valor("servers.json")
     print(valor)
         
         
