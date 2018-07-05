@@ -5,10 +5,8 @@ def online():
   try:
     username = str(os.environ.get('USERNAME', None))
     password = str(os.environ.get('PASSWORD', None))
-    ip = str(os.environ.get('IP', None))
-    port = os.environ.get('PORT', None)
     ftp = ftplib.FTP()
-    ftp.connect(ip, port)
+    ftp.connect("ftp.ezyro.com", 21)
     ftp.login(username, password)
     #ftp.cwd("htdocs")
     #ftp.cwd("arquivos")
@@ -19,12 +17,11 @@ def online():
   
 def salvar(nome_arquivo):
   try:
-    username = str(os.environ.get('USERNAME', None))
-    password = str(os.environ.get('PASSWORD', None))
-    ip = str(os.environ.get('IP', None))
-    port = os.environ.get('PORT', None)
+    username = os.environ.get('USERNAME', None)
+    password = os.environ.get('PASSWORD', None)
+    ip = os.environ.get('IP', None))
     ftp = ftplib.FTP()
-    ftp.connect(ip, port)
+    ftp.connect("ftp.ezyro.com", 21)
     ftp.login(username, password)
     ftp.pwd()
     ftp.cwd("htdocs")
